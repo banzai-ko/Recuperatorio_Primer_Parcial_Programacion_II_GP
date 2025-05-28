@@ -41,7 +41,7 @@ public class PeliculaDrama extends Pelicula implements IAlquilable {
 
     @Override
     public String toString() {
-        return super.toString() + ", Tipo de drama: " + tipoDrama;
+        return super.toString() + "Tipo de drama: " + tipoDrama;
     }
 
     @Override
