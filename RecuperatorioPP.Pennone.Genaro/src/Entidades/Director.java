@@ -13,7 +13,7 @@ public class Director {
     private String dni;
     private String apellido;  
 
-    public Director(String nombre, String dni, String apellido) {
+    public Director(String nombre, String apellido, String dni) {
         this.nombre = nombre;
         this.dni = dni;
         this.apellido = apellido;
