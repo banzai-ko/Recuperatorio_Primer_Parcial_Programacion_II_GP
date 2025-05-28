@@ -1,0 +1,79 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>750</x><y>600</y><w>290</w><h>190</h></coordinates><panel_attributes>Director
+--
+- nombre : String
+- apellido : String
+- dni : String
+--
++ Director(nombre : String, apellido : String, dni : String)
+_+ sonIguales(a : Director, b : Director) : boolean_
++ toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>40</y><w>320</w><h>300</h></coordinates><panel_attributes>&lt;&lt;AbstractClass&gt;&gt;
+Pelicula
+--
+# director : Director
+# cantidadDeEscenas : int
+# titulo : String
+# precio : double
+_#  generadorDeEscenas : Random_
+--
++ Pelicula(titulo : String, precio : double, director : Director)
++ Pelicula(titulo : String, precio : double, nombre : String, apellido : String, dni : String)
++ getCantidadDeEscenas() : int
+- mostrarPelicula(p : Pelicula) : String
+_+  sonIguales(p1 : Pelicula, p2 : Pelicula) : boolean_
++ equals(obj : Object) : boolean
++ toString() : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>440</y><w>180</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+IAlquilable
+--
+getPrecioAlquiler(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>780</y><w>100</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+GeneroDrama
+--
+ROMÁNTICO
+SOCIAL
+HISTÓRICO</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>600</y><w>580</w><h>130</h></coordinates><panel_attributes>PeliculaDrama
+--
+- tipoDrama : GeneroDrama
+--
++ PeliculaDrama(titulo : String, precio : double, director : Director, tipoDrama : GeneroDrama)
+--
++ getPrecioAlquiler() : double
++ toString() : String
++ equals(obj : Object) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>260</y><w>100</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+GeneroAccion
+--
+AVENTURA
+BELICA,
+SUPERHEROES
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1100</x><y>440</y><w>100</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+TipoPelicula
+--
+DRAMA
+ACCION
+TODAS</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>420</y><w>320</w><h>150</h></coordinates><panel_attributes>PeliculaAccion
+--
+- tipoAccion : GeneroAccion
+--
++ PeliculaAccion(titulo : String, precio : double, director : Director, tipoAccion : GeneroAccion)
++ getPrecioAlquiler() : double
++ toString() : String
++ equals(obj : Object) : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>40</y><w>510</w><h>320</h></coordinates><panel_attributes>Videoclub
+--
+- capacidad : int
+- posicion : int
+- peliculas : ArrayList&lt;Pelicula&gt;
+--
++ Videoclub()
++ Videoclub(capacidad : int)
+--
+- sonIguales(p : Pelicula) : boolean
++ agregar(p : Pelicula) : void
+- getPrecio(tipo : TipoPelicula) : double
++ getPrecioPeliculasDrama() : double
++ getPrecioPeliculasAccion() : double
++ getPrecioTotal() : double
+--
++ hasNext() : boolean
++ next() : Pelicula
++ iterator() : Iterator&lt;Pelicula&gt;
+--
++ static mostrarTotales(vc : Videoclub) : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>340</y><w>50</w><h>280</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>30;10;20;50;10;260</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>350</y><w>50</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>30;10;30;50;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>360</y><w>70</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;60</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>720</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>350</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>720</y><w>140</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;70</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>560</y><w>140</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;40</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>190</y><w>380</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;360;10</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>450</y><w>150</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>490</y><w>160</w><h>130</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;10;50;40;10;110</additional_attributes></element></diagram>
